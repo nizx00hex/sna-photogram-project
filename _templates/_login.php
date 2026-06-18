@@ -1,43 +1,36 @@
-    <style>
-        html,
-body {
-  height: 100%;
-}
-
-.form-signin {
-  max-width: 330px;
-  padding: 1rem;
-}
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-    </style>
+<?php    
     
-    <form> 
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$result = validateCredentials($email, $password);
+if($result){
+  ?>
+<main class="container">
+  <div class="bg-body-tertiary p-5 rounded">
+    <h1>Login Success.</h1>
+    <p class="lead">You can login now.</p>
+  </div>
+</main>
+
+  <?php
+} else {
+
+?>
+<main class="form-signin w-100 m-auto">
+    <form method="post" action="login.php"> 
         <img
           class="mb-4"
           src="https://nisath.elitefort.net/fortrix.png"
           alt=""
-          width="72"
-          height="57"
+          width="205"
+          height="190"
         />
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <div class="form-floating">
           <input
             type="email"
+            name="email"
             class="form-control"
             id="floatingInput"
             placeholder="name@example.com"
@@ -47,6 +40,7 @@ body {
         <div class="form-floating">
           <input
             type="password"
+            name="password"
             class="form-control"
             id="floatingPassword"
             placeholder="Password"
@@ -64,8 +58,12 @@ body {
             Remember me
           </label>
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit">
+        <button class="btn btn-primary w-100 py-2 hvr-grow-rotate" type="submit">
           Sign in
         </button>
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2025</p>
       </form>
+</main>
+<?php
+}
+?>

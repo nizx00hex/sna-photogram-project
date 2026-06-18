@@ -1,7 +1,6 @@
 <?php
 include 'libs/load.php';
 ?>
-
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>

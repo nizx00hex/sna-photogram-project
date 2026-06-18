@@ -1,7 +1,6 @@
 <?php
 include 'libs/load.php';
 ?>
-
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -10,20 +9,20 @@ include 'libs/load.php';
     <meta name="description" content="" />
     <meta
       name="author"
-      content="selfmade ninja Academy"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Astro v5.13.2" />
-    <title>Login Photogram</title>
+    <title>Signin Template · Bootstrap v5.3</title>
     <link
       rel="canonical"
-      href="https://getbootstrap.com/docs/5.3/examples/album/"
+      href="https://getbootstrap.com/docs/5.3/examples/sign-in/"
     />
-    <script src="assets/js/color-modes.js"></script>
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="ssets/dist/css/sign_in.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="theme-color" content="#712cf9" />
+    <link href="assets/dist/css/sign-in.css" rel="stylesheet" />
     <style>
-        
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -98,7 +97,7 @@ include 'libs/load.php';
       }
     </style>
   </head>
-  <body>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path
@@ -194,39 +193,11 @@ include 'libs/load.php';
         </li>
       </ul>
     </div>
-    <header data-bs-theme="dark">
-      <div class="collapse text-bg-dark" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4>About</h4>
-              <p class="text-body-secondary">
-                Add some information about the album below, the author, or any
-                other background context. Make it a few sentences long so folks
-                can pick up some informative tidbits. Then, link them off to
-                some social networking sites or contact information.
-              </p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4>Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on X</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <?php loadTemplates("_header");?>
-    </header>
-    <main>
-      <?php loadTemplates("_login");?>
+    
+        <?php loadTemplates("_login");?>
 
-    </main>
-      <?php loadTemplates("_footer");?>
     <script
-      src="assets/dist/js/bootstrap.bundle.min.js"
+      src="../assets/dist/js/bootstrap.bundle.min.js"
       class="astro-vvvwv3sm"
     ></script>
   </body>
