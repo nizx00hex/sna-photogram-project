@@ -13,3 +13,34 @@ function validateCredentials($email, $password) {
         return false;
     }
 }
+
+function signup($user, $pass, $email, $phone) {
+    $servername = "localhost";
+    $username = "";
+    $password = "";
+    $dbname = "Photogram";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+
+    }
+    $sql = "INSERT INTO `Photogram`.`auth` (`username`, `password`, `email`, `phone`) VALUES ('$user', '$pass', '$email', '$phone');";
+    $error = false;
+    // if($conn->query($sql) === TRUE) {
+    //     $error = false;
+    // } else {
+    //     $error = $conn->error;
+    // }
+
+    try {
+        $conn->query($sql);
+        return false;
+    } catch (mysqli_sql_exception $e) {
+        return $e->getMessage();
+    } finally {
+        $conn->close();
+    }
+}
