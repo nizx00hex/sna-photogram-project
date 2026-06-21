@@ -1,4 +1,5 @@
 <?php
+include_once 'includes/Mic.class.php';
 
 function loadTemplates($name) {
     // print(__DIR__ . "/../_templates/$name.php");
