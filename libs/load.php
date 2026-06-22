@@ -2,6 +2,8 @@
 include_once 'includes/Mic.class.php';
 include_once 'includes/Database.class.php';
 include_once 'includes/User.class.php';
+include_once 'includes/Session.class.php';
+Sesssion::start();
 
 function loadTemplates($name) {
     // print(__DIR__ . "/../_templates/$name.php");
