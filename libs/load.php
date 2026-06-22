@@ -1,5 +1,7 @@
 <?php
 include_once 'includes/Mic.class.php';
+include_once 'includes/Database.class.php';
+include_once 'includes/User.class.php';
 
 function loadTemplates($name) {
     // print(__DIR__ . "/../_templates/$name.php");
@@ -16,18 +18,7 @@ function validateCredentials($email, $password) {
 }
 
 function signup($user, $pass, $email, $phone) {
-    $servername = "localhost";
-    $username = "";
-    $password = "";
-    $dbname = "Photogram";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-
-    }
+    $conn = Database::getConnection();
     $sql = "INSERT INTO `Photogram`.`auth` (`username`, `password`, `email`, `phone`) VALUES ('$user', '$pass', '$email', '$phone');";
     $error = false;
     // if($conn->query($sql) === TRUE) {

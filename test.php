@@ -16,7 +16,6 @@
     $mic1 = new Mic("MSI"); //Constructing the object
     // $mic1->brand = "Hyper";
 
-
     // $mic1->light = "Red";
     // $mic1->setLight("RGB");
 
@@ -26,6 +25,13 @@
     
     // print($mic1->brand);
     print($mic1->getBrand());
+    Mic::testFunction(); //no condtruct, not destruct
+
+
+    Database::getConnection();
+    Database::getConnection();
+    Database::getConnection();
+
 
     ?>    
 <!-- </pre> -->

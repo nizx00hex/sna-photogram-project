@@ -20,6 +20,11 @@ class Mic {
     public $light;
     public $price;
 
+    public static function testFunction() {
+        printf("This is a static function, this can be run without object initialization.\n");
+
+    }
+
     public function __construct($brand){
         print("Hello, World\n");
         $this->brand = ucwords("\n".$brand. "\n");
@@ -43,5 +48,9 @@ class Mic {
 
     public function setModel($model) {
         $this->model = ucwords($model);
+    }
+
+    public function __destruct() {
+        print("Destruct object $this->brand...");
     }
 }
