@@ -13,7 +13,7 @@
     // print_r($_FILES);
     // print_r($_COOKIE);
 
-    $mic1 = new Mic("MSI"); //Constructing the object
+    // $mic1 = new Mic("MSI"); //Constructing the object
     // $mic1->brand = "Hyper";
 
     // $mic1->light = "Red";
@@ -24,14 +24,16 @@
     // print($mic1->getModelProxy());
     
     // print($mic1->brand);
-    print($mic1->getBrand());
-    Mic::testFunction(); //no condtruct, not destruct
+    // print($mic1->getBrand());
+    // Mic::testFunction(); //no condtruct, not destruct
 
 
-    Database::getConnection();
-    Database::getConnection();
-    Database::getConnection();
+    // Database::getConnection();
+    // Database::getConnection();
+    // Database::getConnection();
 
+
+    User::login("nixxx", "nixxx");
 
     ?>    
 <!-- </pre> -->

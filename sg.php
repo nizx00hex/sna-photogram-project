@@ -1,7 +1,6 @@
 <pre>
     <?php
         include "libs/load.php";
-        Sesssion::start();
         // session_start();
         
         setcookie("testcookie", "testvalue", time() + (86400 * 40), "/");
