@@ -6,7 +6,7 @@ $pass = "password";
 
 $result = User::login($user, $pass);
 if($result) {
-    echo "w" . $result['username'];
+    echo "Login Success: " . $result['username'];
 } else {
-    echo "N";
+    echo "Login Failed";
 }
