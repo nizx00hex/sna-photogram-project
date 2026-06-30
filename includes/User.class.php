@@ -1,10 +1,17 @@
 <?php
 class User {
     private $conn;
+    private static $SALT = "ASFALSFNQasdkmqwioAFKQWPFQ124XQWENODwd0";
 
     public static function signup($user, $pass, $email, $phone) {
         $conn = Database::getConnection();
-        $sql = "INSERT INTO `Photogram`.`auth` (`username`, `password`, `email`, `phone`) VALUES ('$user', '$pass', '$email', '$phone');";
+
+        $options = [
+            'cost' => 9,
+        ];
+
+        $pass_hash = password_hash($pass, PASSWORD_DEFAULT, $options);
+        $sql = "INSERT INTO `Photogram`.`auth` (`username`, `password`, `email`, `phone`) VALUES ('$user', '$pass_hash', '$email', '$phone');";
         $error = false;
         // if($conn->query($sql) === TRUE) {
         //     $error = false;
@@ -28,13 +35,14 @@ class User {
     }
 
     public static function login($username, $password) {
-        $pass_hash = md5(strrev(md5($password)));
+        // $pass_hash = md5(strrev(md5($password)) . User::$SALT);
         $query = "SELECT * FROM Photogram.auth WHERE `username` = '$username'";
         $conn = Database::getConnection();
         $result = $conn->query($query);
         if($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-            if($row['password'] == $pass_hash) {
+            // if($row['password'] == $pass_hash) {
+            if(password_verify($password, $row['password'])) {
                 return $row;
             } else {
                 return false;

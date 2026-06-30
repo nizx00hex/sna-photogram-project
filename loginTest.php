@@ -1,7 +1,7 @@
 <?php
 include "libs/load.php";
-$user = "chown";
-$pass = "password";
+$user = "binwalk";
+$pass = isset($_GET['pass']) ? $_GET['pass'] : '';
 $result = null;
 
 if(isset($_GET['logout'])) {
@@ -23,7 +23,7 @@ if(Session::get('isLoggedin')) {
         Session::set('isLoggedin', true);
         Session::set('session_user', $result);
     } else {
-        echo "Login failed";
+        echo "Login failed ". $user;
     }
 }
 
